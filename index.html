@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cleaning Company - Professional Cleaning Services Sydney</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            /* You would replace this placeholder with one of your actual images, e.g., '01-scaled.webp' or 'DSC2190.webp' */
+            background-image: linear-gradient(rgba(27, 57, 106, 0.7), rgba(16, 32, 61, 0.8)), url('https://placehold.co/1920x1080/3B82F6/FFFFFF?text=Your+Hero+Image+(e.g.,+Cleaning+Action)');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2); /* Adjusted shadow color to match blue theme */
+        }
+        .faq-item .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px; /* Adjust as needed */
+            transition: max-height 0.5s ease-in;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+        /* Custom scrollbar for a more polished look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6; /* Blue to match theme */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB; /* Darker blue */
+        }
+        .container-max-width {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+       
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <nav class="container-max-width px-4 lg:px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="logo/logo-cleaning-company.png" alt="The Cleaning Company Logo" class="h-14 w-auto">   
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition duration-300">Testimonials</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-600 transition duration-300">FAQ</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+                <a href="#quote" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg cta-button shadow-sm">Get a Quote</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <a href="#about" class="block px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition duration-300">About Us</a>
+            <a href="#services" class="block px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition duration-300">Services</a>
+            <a href="#testimonials" class="block px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition duration-300">Testimonials</a>
+            <a href="#faq" class="block px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition duration-300">FAQ</a>
+            <a href="#contact" class="block px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition duration-300">Contact</a>
+            <a href="#quote" class="block px-4 py-3 bg-blue-600 text-white text-center font-semibold rounded-b-lg hover:bg-blue-700 transition duration-300 m-2">Get a Quote</a>
+        </div>
+    </header>
+
+    <section class="hero-bg pt-40 pb-24 md:pt-48 md:pb-32 text-white text-center">
+        <div class="container-max-width px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-md">Clean Spaces, Happy Businesses</h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto drop-shadow-sm">
+                Professional and reliable cleaning services tailored for businesses in Sydney.
+                We focus on exceptional customer service to create welcoming environments, perfectly tailored to your needs.
+            </p>
+            <a href="#quote" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-lg px-10 py-4 rounded-lg cta-button shadow-lg">
+                Request Your Free Quote
+            </a>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-16 bg-gray-100">
+        <div class="container-max-width px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-12">Why Choose The Cleaning Company?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-blue-100 transition-shadow duration-300">
+                    <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-users-cog"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Business Focused</h3>
+                    <p class="text-gray-600 text-sm">Specialized cleaning solutions designed for commercial spaces and business needs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-blue-100 transition-shadow duration-300">
+                    <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Exceptional Service</h3>
+                    <p class="text-gray-600 text-sm">In this five years journey, our unique strength is customer service, ensuring your complete satisfaction.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-blue-100 transition-shadow duration-300">
+                    <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Trusted Professionals</h3>
+                    <p class="text-gray-600 text-sm">Fully vetted, insured, and experienced cleaners dedicated to quality.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-blue-100 transition-shadow duration-300">
+                    <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-star"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Satisfaction Guaranteed</h3>
+                    <p class="text-gray-600 text-sm">We're committed to your happiness. If you're not satisfied, we'll make it right.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16">
+        <div class="container-max-width px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-12">Our Cleaning Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden service-card transition-all duration-300">
+                    <img src="img/OfficecommA.jpg" alt="Commercial Cleaning" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">Commercial Cleaning</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Professional cleaning for offices, retail spaces, and other commercial properties. Maintain a clean and healthy work environment.</p>
+                        <a href="#quote" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Get Quote <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden service-card transition-all duration-300">
+                    <img src="img/DSC2190.webp" alt="Residential Cleaning" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">Residential Cleaning</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Keep your home spotless with our regular or deep cleaning services for kitchens, bathrooms, bedrooms, and living areas.</p>
+                        <a href="#quote" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Get Quote <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden service-card transition-all duration-300">
+                    <img src="img/bondclea.jpg" alt="End of Lease Cleaning" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">End of Lease Cleaning</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Get your bond back with our thorough end of lease cleaning. We follow agency-approved checklists.</p>
+                        <a href="#quote" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Get Quote <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden service-card transition-all duration-300">
+                    <img src="img/buildersA.jpg" alt="Builders Cleaning" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">Builders Cleaning</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Post-construction cleaning to make newly built or renovated properties shine and ready for occupancy.</p>
+                        <a href="#quote" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Get Quote <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-blue-50">
+        <div class="container-max-width px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="img/grupal.jpg" alt="The Cleaning Company Team" class="rounded-xl shadow-xl">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-blue-600 mb-6">About The Cleaning Company</h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Welcome to The Cleaning Company! We are passionate about creating clean, healthy, and happy environments for businesses across Sydney. Learn about our journey, our values, and the dedicated team that makes it all happen.
+                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Our core focus is on providing exceptional customer service alongside top-quality cleaning. We believe in building strong relationships with our clients through reliability, transparency, and a commitment to exceeding expectations.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Specialists in Commercial & Business Cleaning</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Unwavering Commitment to Customer Service</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Experienced, Vetted, and Insured Professionals</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Serving Sydney and Surrounding Suburbs</li>
+                    </ul>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg cta-button shadow-md">Contact Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16">
+        <div class="container-max-width px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-4">What Our Clients Say</h2>
+            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">We're proud of the relationships we build and the feedback we receive.
+                </p>
+            <div class="relative">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 testimonial-slider">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/50x50/DBEAFE/1E40AF?text=BS" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Business Solutions Ltd.</h4>
+                                <div class="text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"The Cleaning Company has transformed our office environment. Their attention to detail and customer service is second to none. Highly recommended for any business!"</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/50x50/DBEAFE/1E40AF?text=RT" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Retail Hub Sydney</h4>
+                                <div class="text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Reliable, efficient, and always professional. The Cleaning Company keeps our store looking its best for our customers. Their team is fantastic to work with."</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/50x50/DBEAFE/1E40AF?text=CS" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Creative Studios Co.</h4>
+                                <div class="text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"As a busy agency, having a clean workspace is vital. The Cleaning Company delivers consistently high-quality results. Their customer service truly stands out."</p>
+                    </div>
+                </div>
+                <!-- 
+                <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 z-10">
+                    <i class="fas fa-chevron-left text-blue-600"></i>
+                </button>
+                <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 z-10">
+                    <i class="fas fa-chevron-right text-blue-600"></i>
+                </button> 
+                -->
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 bg-gray-100">
+        <div class="container-max-width px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-12">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="faq-item bg-white rounded-xl shadow-lg">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 focus:outline-none">
+                        <span class="text-lg font-semibold text-blue-700">What types of businesses do you service?</span>
+                        <i class="fas fa-chevron-down faq-icon text-blue-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-gray-600 text-sm">
+                        <p>We provide cleaning services for a wide range of businesses including offices, retail stores, medical facilities, educational institutions, strata buildings, and more. Contact us to discuss your specific commercial cleaning needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-xl shadow-lg">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 focus:outline-none">
+                        <span class="text-lg font-semibold text-blue-700">Are your cleaning products eco-friendly?</span>
+                        <i class="fas fa-chevron-down faq-icon text-blue-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-gray-600 text-sm">
+                        <p>Yes, we are committed to using environmentally friendly and non-toxic cleaning products where possible, ensuring a safe and healthy environment for your employees and clients while minimizing our impact on the planet.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-xl shadow-lg">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 focus:outline-none">
+                        <span class="text-lg font-semibold text-blue-700">How do you ensure quality and customer satisfaction?</span>
+                        <i class="fas fa-chevron-down faq-icon text-blue-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-gray-600 text-sm">
+                        <p>Customer service is our unique strength. We have rigorous training for our staff, conduct regular quality checks, and maintain open communication with our clients. If you're ever unsatisfied, we promise to make it right.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-xl shadow-lg">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 focus:outline-none">
+                        <span class="text-lg font-semibold text-blue-700">Can you provide services outside of regular business hours?</span>
+                        <i class="fas fa-chevron-down faq-icon text-blue-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-gray-600 text-sm">
+                        <p>Absolutely. We offer flexible scheduling options, including evenings and weekends, to minimize disruption to your business operations. We'll work with you to find a cleaning schedule that best suits your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="py-20 bg-blue-600 text-white">
+        <div class="container-max-width px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready for a Spotless Business Environment?</h2>
+            <p class="text-lg md:text-xl mb-10 max-w-xl mx-auto">Let us handle the cleaning, so you can focus on your business. Get your free, no-obligation quote today!</p>
+            
+            <form id="quoteForm" class="max-w-lg mx-auto bg-white text-gray-800 p-8 rounded-xl shadow-2xl">
+                <div id="form-message" class="mb-4 text-sm"></div>
+                <div class="mb-5">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-700 text-left">Full Name / Company Name</label>
+                    <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Your Name / Company Name" required>
+                </div>
+                <div class="mb-5">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-700 text-left">Email Address</label>
+                    <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="you@example.com" required>
+                </div>
+                <div class="mb-5">
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-700 text-left">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="04xx xxx xxx">
+                </div>
+                <div class="mb-5">
+                    <label for="service_type" class="block mb-2 text-sm font-medium text-gray-700 text-left">Service Needed</label>
+                    <select id="service_type" name="service_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3">
+                        <option selected>Choose a service</option>
+                        <option value="commercial">Commercial Cleaning</option>
+                        <option value="residential">Residential Cleaning</option>
+                        <option value="end_of_lease">End of Lease Cleaning</option>
+                        <option value="builders_cleaning">Builders Cleaning</option>
+                        <option value="deep_clean">Deep Cleaning</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-700 text-left">Additional Details (e.g., business type, property size, specific needs)</label>
+                    <textarea id="message" name="message" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Tell us more about your cleaning requirements..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-lg px-8 py-3 rounded-lg cta-button shadow-md">
+                    Get My Free Quote
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-50"> <div class="container-max-width px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-12">Get In Touch</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <i class="fas fa-phone-alt text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Call Us</h3>
+                    <p class="text-gray-600">Reach us directly for immediate assistance or to discuss your needs.</p>
+                    <a href="tel:+61481578115" class="text-blue-600 font-semibold hover:underline mt-2 block">+61 481 578 115</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <i class="fas fa-envelope text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Email Us</h3>
+                    <p class="text-gray-600">Send us an email with your queries, and we'll get back to you promptly.</p>
+                    <a href="mailto:Thecleaningcompanysydney@gmail.com" class="text-blue-600 font-semibold hover:underline mt-2 block">Thecleaningcompanysydney@gmail.com</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <i class="fas fa-map-marker-alt text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Our Location</h3>
+                    <p class="text-gray-600">Serving Sydney & Surrounding Areas.</p>
+                    <p class="text-gray-500 mt-2 block">23 Warnes Avenue, Bondi Beach, Australia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container-max-width px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                     <a href="#" class="flex items-center mb-4">
+                        <div>
+                            <span class="logo-text-the" style="color: #fde68a;">THE</span> <span class="logo-text-main" style="color: #93C5FD;">Cleaning</span> <span class="logo-text-company" style="color: #BFDBFE;">COMPANY</span> </div>
+                    </a>
+                    <p class="text-sm">Your trusted partner for professional cleaning services in Sydney. We make your business shine!</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-blue-400 transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition duration-300">Services</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-400 transition duration-300">Testimonials</a></li>
+                        <li><a href="#faq" class="hover:text-blue-400 transition duration-300">FAQ</a></li>
+                        <li><a href="#quote" class="hover:text-blue-400 transition duration-300">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-4">Contact Us</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-phone mr-2"></i> +61 481 578 115</li>
+                        <li><i class="fas fa-envelope mr-2"></i> Thecleaningcompanysydney@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 23 Warnes Avenue, Bondi Beach, Australia</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-4">Follow Us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 text-xl"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> The Cleaning Company. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart text-red-500"></i> using HTML & Tailwind CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const isMobileMenuLink = mobileMenu.contains(this);
+                if (isMobileMenuLink) {
+                    mobileMenu.classList.add('hidden'); 
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const questionButton = item.querySelector('.faq-question');
+            questionButton.addEventListener('click', () => {
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('open')) {
+                        otherItem.classList.remove('open');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('open');
+            });
+        });
+        
+        // Basic Quote Form Submission (for demonstration)
+        const quoteForm = document.getElementById('quoteForm');
+        const formMessage = document.getElementById('form-message');
+
+        quoteForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service_type').value;
+
+            if (!name || !email || service === "Choose a service") {
+                formMessage.textContent = "Please fill in all required fields (Name/Company, Email, Service Needed).";
+                formMessage.className = "mb-4 text-sm text-red-600 p-3 bg-red-100 rounded-lg";
+                return;
+            }
+            
+            formMessage.textContent = "Thank you for your request! We will get back to you shortly.";
+            formMessage.className = "mb-4 text-sm text-green-700 p-3 bg-green-100 rounded-lg";
+            quoteForm.reset(); 
+            // For a real site, you'd send data to a backend:
+            // const formData = new FormData(quoteForm);
+            // fetch('/api/submit-quote', { method: 'POST', body: formData }) // Replace with your actual API endpoint
+            //   .then(response => response.json())
+            //   .then(data => { console.log('Success:', data); /* Handle success */ })
+            //   .catch((error) => { console.error('Error:', error); /* Handle error */ });
+        });
+
+    </script>
+
+</body>
+</html>
