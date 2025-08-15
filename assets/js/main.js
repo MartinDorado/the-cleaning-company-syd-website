@@ -47,24 +47,59 @@
             });
         });
         
-        // Basic Quote Form Submission (for demonstration)
+        // ===== Quote Form submission (Formspree) =====
         const quoteForm = document.getElementById('quoteForm');
         const formMessage = document.getElementById('form-message');
 
-        quoteForm.addEventListener('submit', function(e) {
-            e.preventDefault(); 
+        if (quoteForm && formMessage) {
+        quoteForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service_type').value;
+            // Basic front-end validation
+            const name = document.getElementById('name')?.value.trim();
+            const email = document.getElementById('email')?.value.trim();
+            const service = document.getElementById('service_type')?.value;
 
-            if (!name || !email || service === "Choose a service") {
-                formMessage.textContent = "Please fill in all required fields (Name/Company, Email, Service Needed).";
-                formMessage.className = "mb-4 text-sm text-red-600 p-3 bg-red-100 rounded-lg";
-                return;
+            if (!name || !email || !service) {
+            formMessage.textContent = "Please fill in all required fields (Name/Company, Email, Service Needed).";
+            formMessage.className = "mb-4 text-sm text-red-700 p-3 bg-red-100 rounded-lg";
+            return;
             }
-            
-            formMessage.textContent = "Thank you for your request! We will get back to you shortly.";
-            formMessage.className = "mb-4 text-sm text-green-700 p-3 bg-green-100 rounded-lg";
-            quoteForm.reset(); 
+
+            const submitBtn = quoteForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.textContent : "";
+            if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+            }
+
+            try {
+            const formData = new FormData(quoteForm);
+            const res = await fetch(quoteForm.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            });
+
+            if (res.ok) {
+                formMessage.textContent = "Thank you! We will get back to you shortly.";
+                formMessage.className = "mb-4 text-sm text-green-700 p-3 bg-green-100 rounded-lg";
+                quoteForm.reset();
+            } else {
+                // Try to read errors from Formspree
+                const data = await res.json().catch(() => ({}));
+                const err = data.errors ? data.errors.map(e => e.message).join(", ") : "There was a problem submitting the form.";
+                formMessage.textContent = err;
+                formMessage.className = "mb-4 text-sm text-red-700 p-3 bg-red-100 rounded-lg";
+            }
+            } catch (error) {
+            formMessage.textContent = "Network error. Please try again later.";
+            formMessage.className = "mb-4 text-sm text-red-700 p-3 bg-red-100 rounded-lg";
+            } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText || "Get My Free Quote";
+            }
+            }
         });
+        }

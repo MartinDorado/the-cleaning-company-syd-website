@@ -1,0 +1,12 @@
+# Use LF for text files in repo and working copy
+* text=auto eol=lf
+
+# Binaries (no EOL conversion)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+
+# Keep SVG as text with LF
+*.svg  text eol=lf
