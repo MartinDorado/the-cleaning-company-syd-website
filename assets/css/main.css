@@ -1,0 +1,65 @@
+body {
+            font-family: 'Lato', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-bg {
+            background-image:
+                linear-gradient(rgba(27,57,106,.7), rgba(16,32,61,.8)),
+                url('../../img/tobiyanncaro.webp');
+            background-size: cover;
+            background-position: center 5%;
+            }
+
+        /* === NEW CSS CLASS FOR THE QUOTE SECTION BACKGROUND === */
+        .quote-bg {
+            background-image:
+                linear-gradient(rgba(27,57,106,.85), rgba(16,32,61,.9)),
+                url('../../img/camiocc.jpg');
+            background-size: cover;
+            background-position: center;
+            }
+
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+        .faq-item .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB;
+        }
+        .container-max-width {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Single-color vector suitable for mask-icon -->
+  <g fill="#000000">
+    <!-- main sweeping wave -->
+    <path d="M80 640
+             C 240 560, 420 520, 620 520
+             C 840 520, 960 560, 960 560
+             C 880 520, 720 470, 560 470
+             C 380 470, 220 520, 120 560
+             C 100 568, 90 604, 80 640 Z"/>
+    <!-- medium splash -->
+    <path d="M360 540
+             C 420 500, 500 480, 560 480
+             C 500 510, 440 540, 360 560 Z"/>
+    <!-- small droplet -->
+    <path d="M680 400
+             C 720 340, 820 320, 860 400
+             C 820 460, 720 480, 680 400 Z"/>
+  </g>
+</svg>
