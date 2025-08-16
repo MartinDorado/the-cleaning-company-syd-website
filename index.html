@@ -355,13 +355,20 @@
     <!-- Optional metadata -->
     <input type="hidden" name="subject" value="New Quote Request — The Cleaning Company">
     <input type="hidden" name="form_name" value="Quote Form">
-    <!-- Optional redirect after success:
-    <input type="hidden" name="_redirect" value="https://your-domain.com/thank-you.html"> -->
+    <!-- Optional redirect after success -->
+    <input type="hidden" name="_redirect" value="https://thecleaningcompanysydney/thank-you.html">
+
+    <div style="position:absolute; left:-9999px;" aria-hidden="true" tabindex="-1">
+    <label for="company_website">Company Website</label>
+    <input type="text" id="company_website" name="company_website" autocomplete="off">
+    </div>
+
 
     <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-lg px-8 py-3 rounded-lg cta-button shadow-md">
         Get My Free Quote
     </button>
     </form>
+    </section>
 
 
     <!-- Contact Information Section -->
@@ -435,6 +442,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script defer src="assets/js/main.js?v=20250815"></script>
 </body>
 </html>
